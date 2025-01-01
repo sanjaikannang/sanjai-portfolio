@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    /* TT Tunnela font - ../src/assets/Fonts/1f90f94c17909f8555b5.woff2 */
+    /* Normal Font - ../src/assets/1ecbcc126412ccfd5436.woff2  */
+    src: url(../src/assets/Fonts/1f90f94c17909f8555b5.woff2) format('opentype');
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
