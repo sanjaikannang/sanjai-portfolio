@@ -170,3 +170,141 @@ const Skills = () => {
 };
 
 export default Skills;
+
+// import { useEffect, useRef } from 'react'
+// import gsap from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// if (typeof window !== 'undefined') {
+//   gsap.registerPlugin(ScrollTrigger)
+// }
+
+// const customers = [
+//   { id: 1, alt: "AlfaTKG" },
+//   { id: 2, alt: "CratoFlow" },
+//   { id: 3, alt: "Epsilon" },
+//   { id: 4, alt: "GoFloaters" },
+//   { id: 5, alt: "JandF" },
+//   { id: 6, alt: "Srkay" },
+//   { id: 7, alt: "Epsilon" },
+//   { id: 8, alt: "GoFloaters" },
+//   { id: 9, alt: "JandF" },
+//   { id: 10, alt: "Srkay" },
+
+//   { id: 11, alt: "AlfaTKG" },
+//   { id: 12, alt: "CratoFlow" },
+//   { id: 13, alt: "Epsilon" },
+//   { id: 14, alt: "GoFloaters" },
+//   { id: 15, alt: "JandF" },
+//   { id: 16, alt: "Srkay" },
+//   { id: 17, alt: "Epsilon" },
+//   { id: 18, alt: "GoFloaters" },
+//   { id: 19, alt: "JandF" },
+//   { id: 20, alt: "Srkay" },
+// ]
+
+// const Skills = () => {
+//   const firstRow = customers.slice(0, 10)
+//   const secondRow = customers.slice(10)
+//   const firstRowRef = useRef(null)
+//   const secondRowRef = useRef(null)
+
+//   useEffect(() => {
+//     // Make sure we're in the browser environment
+//     if (typeof window === 'undefined') return
+
+//     // Calculate the total width of a row (including spacing)
+//     const getRowWidth = (row) => {
+//       const cards = row.children[0].children
+//       const cardWidth = 6.5 // w-52 = 13rem = 208px
+//       const spacing = 0.35 // space-x-6 = 1.5rem = 24px
+//       return cards.length * (cardWidth + spacing)
+//     }
+
+//     const setupRowAnimation = (rowRef, direction) => {
+//       const rowWidth = getRowWidth(rowRef)
+
+//       gsap.to(rowRef.children[0], {
+//         x: direction * -rowWidth,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: rowRef,
+//           start: "-400px center",
+//           end: "400px center",
+//           scrub: 1,
+//           invalidateOnRefresh: true,
+//           markers: true
+//         }
+//       })
+//     }
+
+//     // Set up animations when refs are available
+//     if (firstRowRef.current && secondRowRef.current) {
+//       // First row moves right to left
+//       setupRowAnimation(firstRowRef.current, 1)
+//       // Second row moves left to right
+//       setupRowAnimation(secondRowRef.current, -1)
+//     }
+
+//     // Cleanup
+//     return () => {
+//       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+//     }
+//   }, [])
+
+//   return (
+//     <section className="h-screen overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="flex flex-col items-center justify-center space-y-8">
+//           <div className="text-center max-w-3xl">
+//             <h2 className="text-[2.5rem] leading-tight font-bold text-[#0B1C39] mb-14">
+//               Customer Section
+//             </h2>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Cards Section */}
+//       <div className="w-full space-y-6">
+//         <div ref={firstRowRef} className="overflow-hidden pb-4">
+//           <div className="flex space-x-6 min-w-max">
+//             {firstRow.map((customer) => (
+//               <div
+//                 key={customer.id}
+//                 className="w-52 h-40 rounded-lg shadow-sm flex items-center justify-center p-4 transition-transform hover:scale-105"
+//               >
+//                 <img
+//                   src={""}
+//                   alt={customer.alt}
+//                   width={200}
+//                   height={100}
+//                   className="object-contain"
+//                 />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//         <div ref={secondRowRef} className="overflow-hidden pb-4">
+//           <div className="flex space-x-6 min-w-max">
+//             {secondRow.map((customer) => (
+//               <div
+//                 key={customer.id}
+//                 className="w-52 h-40 rounded-lg shadow-sm flex items-center justify-center p-4 transition-transform hover:scale-105"
+//               >
+//                 <img
+//                   src={""}
+//                   alt={customer.alt}
+//                   width={200}
+//                   height={100}
+//                   className="object-contain"
+//                 />
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+
+// export default Skills
